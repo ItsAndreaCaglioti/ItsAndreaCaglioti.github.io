@@ -1,0 +1,80 @@
+body{
+    background-color: #242D40;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+/*
+*{
+    cursor:crosshair;
+    /*cursor: url("../asset/Black Cross.cur"), auto;
+}
+*/
+/*https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp*/
+.navbar{
+    position: sticky;
+    width: 100%;
+    height: 4em;
+    background-color: #1B2936;
+    white-space: nowrap; /* Multiple whitespaces are collapsed into one, but the text doesn’t wrap to the next line*/
+    overflow:auto;
+    overflow-y:hidden;/*toglie la scrol verticale*/
+}
+
+/*modifico la scroll*/
+.navbar::-webkit-scrollbar {
+    /*width: 0.1em;*/
+    height: 0.2em;
+    background-color: #1B2936; /* or add it to the track, colore della bar */
+  }
+  
+  /* Add a thumb */
+.navbar::-webkit-scrollbar-thumb {
+    /*border-radius: 10%;*/
+    background: #1B2936;
+}
+
+.navbar .container-profile{
+    position: relative;
+    display: inline-block;
+    /*float: left;*/
+    width: 4em;
+    height: 4em;
+    background-color: none;
+}
+
+.container-profile .circle {
+    margin: 0.7em;
+    width: 2.75em;
+    height: 2.75em;  
+    border-radius: 30%;   
+    background: #213440; 
+}
+
+/*image*/
+.circle img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    opacity: 1;/* 0 -> non si vede l'alemnto*/
+}
+
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations*/
+@keyframes loop {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_fade*/
+.circle:hover img {
+    /*opacity: 0;*/
+    /*transition: 1.5s ease;/*https://www.w3schools.com/css/css3_transitions.asp*/
+    animation-duration: 1s;
+    animation-name: loop;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;   
+}
